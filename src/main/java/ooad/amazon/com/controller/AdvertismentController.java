@@ -59,7 +59,7 @@ public class AdvertismentController {
 		
 		//System.out.println("\nProduct Name: " + name + "\nCategory: " + category + "\nBirthday: " + bday);
  		
- 		String uploadedFileLocation = "C:\\Users\\Tush\\eclipse-workspace\\finalooad-master\\amazon.com\\src\\main\\webapp\\images\\advertisments\\" + productname + "." +  fileDetail.getFileName().split("\\.")[1];
+ 		String uploadedFileLocation = "/home/yamini/ooadFinal/OOADamazon/src/main/webapp/images/advertisments/" + productname + "." +  fileDetail.getFileName().split("\\.")[1];
 		 //String uploadedFileLocation = "D:\\pics"  + productname + "." +  fileDetail.getFileName().split("\\.")[1];;
 		 
 		 String storeUrl = "images/advertisments/" +  productname + "." +  fileDetail.getFileName().split("\\.")[1];

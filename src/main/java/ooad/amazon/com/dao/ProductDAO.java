@@ -21,7 +21,7 @@ public class ProductDAO {
 	public static List<Product> getAllProducts() {
 		Session ses = CommonSessionFactory.sf.openSession();
 		
-		List<Product> prodlist = ses.createNativeQuery("select * from product",Product.class).list();
+		List<Product> prodlist = ses.createNativeQuery("select * from Product",Product.class).list();
 		for(Product p: prodlist)
 		{Hibernate.initialize(p.getProduct_images());
 		Hibernate.initialize(p.getCategory());
@@ -39,7 +39,7 @@ public class ProductDAO {
 	public static List<Product> getAllSellerProducts(int sellerid) {
 		Session ses = CommonSessionFactory.sf.openSession();
 		
-		List<Product> prodlist = ses.createNativeQuery("select * from product where seller = "+sellerid,Product.class).list();
+		List<Product> prodlist = ses.createNativeQuery("select * from Product where seller = "+sellerid,Product.class).list();
 		for(Product p: prodlist)
 		{Hibernate.initialize(p.getProduct_images());
 		Hibernate.initialize(p.getCategory());
@@ -55,7 +55,7 @@ public class ProductDAO {
 	public static List<Product> getProductsbyCategory(int categoryname) {
 		Session ses = CommonSessionFactory.sf.openSession();
 		System.out.println(categoryname);
-		List<Category> catlist = ses.createNativeQuery("select * from category where super_cat_id =" +categoryname , Category.class).list();
+		List<Category> catlist = ses.createNativeQuery("select * from Category where super_cat_id =" +categoryname , Category.class).list();
 		
 	
 		List<Product> prodlist = ses.createNativeQuery("select * from Product where category_cat_id =" + categoryname , Product.class).list();

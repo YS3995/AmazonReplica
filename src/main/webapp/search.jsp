@@ -11,54 +11,6 @@
 <script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
 
 
-<script type="text/javascript">
-
-$(document).ready(function(){
-
-	var filteredData = [];
-
-	var udata = JSON.parse(localStorage.getItem("userdata"));
-	var is_birthday = false;
-
-	if(udata == null) {
-		$('#nameText').text("Hello, Sign In");
-		//$('#deliverTo').text("");
-		//$('#myAmazon').text("Your Amazon");m
-	} else {
-		$('#nameText').text("Hello, " + udata.fname);
-		$('#deliverTo').text("Deliver To, " + udata.fname);
-		$('#myAmazon').text(udata.fname+"'s Amazon");
-		$('#signInButton').hide();
-		var responsebirthdate = new Date(udata.dob);
-		var currentdate = new Date ();
-		console.log(responsebirthdate);
-		console.log(currentdate);
-		console.log(currentdate.getMonth());
-		console.log(responsebirthdate.getMonth());
-		console.log(currentdate.getDate());
-		console.log(responsebirthdate.getDate());
-		if(currentdate.getMonth() == responsebirthdate.getMonth()+1 &&  currentdate.getDate() == responsebirthdate.getDate() ){
-		console.log("happy birthday");
-		is_birthday = true;
-		}
-	}
-	$("#priceError").hide();
-	
-	/* loadGenericFilter("color", 'Color'); */
-	loadGenericFilter("temp1_value", "temp1_valuedropdown");
-	loadGenericFilter("temp2_value", "temp2_valuedropdown");
-	loadGenericFilter("temp3_value", "temp3_valuedropdown");
-	loadGenericFilter("temp4_value", "temp4_valuedropdown");
-	loadGenericFilter("temp5_value", "temp5_valuedropdown");
-	loadGenericFilter("temp6_value", "temp6_valuedropdown");
-	loadListings();
-
-});
-
-</script>
-
-
-
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 
 
@@ -83,6 +35,7 @@ $(document).ready(function(){
 <!-- custom javascript -->
 <script src="js/script.js" type="text/javascript"></script>
 <script src="js/scripts/viewProductDetail.js" type="text/javascript"></script>
+
 
 <script type="text/javascript">
 
@@ -419,9 +372,51 @@ function GetSortOrderDescending(prop) {
 
 
 
+<script type="text/javascript">
 
-    
+$(document).ready(function(){
 
+	var filteredData = [];
+
+	var udata = JSON.parse(localStorage.getItem("userdata"));
+	var is_birthday = false;
+
+	if(udata == null) {
+		$('#nameText').text("Hello, Sign In");
+		//$('#deliverTo').text("");
+		//$('#myAmazon').text("Your Amazon");m
+	} else {
+		$('#nameText').text("Hello, " + udata.fname);
+		$('#deliverTo').text("Deliver To, " + udata.fname);
+		$('#myAmazon').text(udata.fname+"'s Amazon");
+		$('#signInButton').hide();
+		var responsebirthdate = new Date(udata.dob);
+		var currentdate = new Date ();
+		console.log(responsebirthdate);
+		console.log(currentdate);
+		console.log(currentdate.getMonth());
+		console.log(responsebirthdate.getMonth());
+		console.log(currentdate.getDate());
+		console.log(responsebirthdate.getDate());
+		if(currentdate.getMonth() == responsebirthdate.getMonth()+1 &&  currentdate.getDate() == responsebirthdate.getDate() ){
+		console.log("happy birthday");
+		is_birthday = true;
+		}
+	}
+	$("#priceError").hide();
+	
+	/* loadGenericFilter("color", 'Color'); */
+	loadGenericFilter("temp1_value", "temp1_valuedropdown");
+	loadGenericFilter("temp2_value", "temp2_valuedropdown");
+	loadGenericFilter("temp3_value", "temp3_valuedropdown");
+	loadGenericFilter("temp4_value", "temp4_valuedropdown");
+	loadGenericFilter("temp5_value", "temp5_valuedropdown");
+	loadGenericFilter("temp6_value", "temp6_valuedropdown");
+	loadListings();
+
+});
+
+</script>
 
 </head>
 <body>

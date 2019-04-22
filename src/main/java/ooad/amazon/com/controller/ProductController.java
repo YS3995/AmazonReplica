@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -166,7 +165,7 @@ public class ProductController {
 		 
 		 //String uploadedFileLocation = "C:\\Users\\Rikki\\eclipse-workspace\\student-management-system\\src\\main\\webapp\\imageData\\" + roll + "." +  fileDetail.getFileName().split("\\.")[1];
 		 
-		 String uploadedFileLocation = "C:\\Users\\Tush\\eclipse-workspace\\finalooad-master\\amazon.com\\src\\main\\webapp\\images\\products\\" + productname + "." +  fileDetail.getFileName().split("\\.")[1];
+		 String uploadedFileLocation = "/home/yamini/ooadFinal/OOADamazon/src/main/webapp/images/products/" + productname + "." +  fileDetail.getFileName().split("\\.")[1];
 		 //String uploadedFileLocation = "D:\\pics"  + productname + "." +  fileDetail.getFileName().split("\\.")[1];;
 		 
 		 String storeUrl = "images/products/" +  productname + "." +  fileDetail.getFileName().split("\\.")[1];

@@ -255,7 +255,21 @@ public class UserController {
 		
 	}
 	
-	
+	@POST
+	@Path("/updatePassword")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public Response updatePass(@FormParam("password") String pass,
+								@FormParam("password1") String pass1,
+								@FormParam("password2") String pass2,
+								@FormParam("user_id") int uid) {
+		
+		if(!pass1.equals(pass2)) {
+			return Response.ok("Passwords are not matching").build();
+		}
+		int resp = UserDAO.updatePass(pass,pass1,uid);
+		System.out.println(pass + " " + pass1 + " " + pass2 + " " + uid);
+		return Response.ok("Done").build();
+	}
 	
 	
 	

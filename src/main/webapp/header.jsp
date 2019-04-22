@@ -108,6 +108,19 @@ function SignOut() {
 	window.location.href = "http://localhost:8055/amazon.com/";
 }
 
+function ResetPass() {
+	
+	var umail = JSON.parse(localStorage.getItem("userdata"));
+	
+	var api="http://localhost:8055/amazon.com/webapi/mailServices/sendMail/"+umail.emailid;
+	
+	$.get(api , function(data, status){
+		alert(data);
+	});
+	
+	alert("Link to reset the password has been sent to your mail.");
+}
+
 function setCategory(id1) {
 	localStorage.setItem("selectedcategory",id1);
 	console.log('value of lc is :'+localStorage.getItem("selectedcategory"));
@@ -396,6 +409,7 @@ $.get(api , function(data, status){
 					<li class="list-manager"><a href="https://www.amazon.in/p2p/ref=nav_youraccount_sell">Your Seller Account</a></li>
 					<li class="list-manager"><a href="https://www.amazon.in/gp/digital/fiona/manage/ref=nav_youraccount_myk">Manage your content and devices</a></li>
 					<li class="list-manager"><a href="#" onclick="SignOut();">Sign Out</a></li>
+					<li class="list-manager"><a href="#" onclick="ResetPass();">Reset Password</a></li>
 					
 
 				</ul>

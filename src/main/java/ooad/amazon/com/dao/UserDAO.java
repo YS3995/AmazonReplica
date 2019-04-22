@@ -239,6 +239,30 @@ public static String addsellerdetails(Seller seller, String cardno, String cvv) 
 		return 1;
 		
 	}
+
+
+	public static int updatePass(String pass, String pass1, int uid) {
+		// TODO Auto-generated method stub
+		
+		Session ses = CommonSessionFactory.sf.openSession();
+		ses.beginTransaction();
+		
+		User user = (User)ses.load(User.class, uid);
+		//System.out.println("&&&&&&&&&" + user.toString());
+		//Hibernate.initialize(user.getCartlist());
+		//List <CartItem> njlist = new ArrayList<CartItem> ();
+		//System.out.println("update user after this point :");
+		
+		if(user.getPassword().equals(pass)) {
+			user.setPassword(pass1);
+		}
+		ses.save(user);
+		ses.getTransaction().commit();
+		ses.close();
+	
+		
+		return 0;
+	}
 	
 	
 	
